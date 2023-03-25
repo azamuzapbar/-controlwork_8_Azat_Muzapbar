@@ -28,6 +28,7 @@
   object-fit: contain;
 }
 
+
 </style>
 
 <div class="row">
@@ -40,5 +41,31 @@
             </div>
         </div>
     </div>
+</div>
+<div class="col-sm-8">
+    <h3>Add a review</h3>
+    <form method="post" action="{% url 'review_create' product.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    {% if reviews %}
+    <h3>Reviews</h3>
+    <ul>
+        {% for review in reviews %}
+        <li>
+            <p><strong>{{ review.author }}</strong> says:</p>
+            <p>{{ review.text }}</p>
+            <p>Rating: {{ review.rating }}</p>
+            <a href="{% url 'review_update' review.pk %}">Edit</a>
+            <a href="{% url 'review_delete' review.pk %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No reviews yet.</p>
+    {% endif %}
+</div>
 </div>
 {% endblock %}

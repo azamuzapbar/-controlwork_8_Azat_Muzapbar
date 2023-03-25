@@ -4,6 +4,9 @@ from django.core.validators import MinLengthValidator, BaseValidator
 
 from webapp.models import Product
 
+from webapp.models import Review
+
+
 def max_len_validator(string):
     if len(string) > 20:
         raise ValidationError('Заголовок должен быть длиннее 2 символов')
@@ -44,6 +47,23 @@ class ProductForm(forms.ModelForm):
         if Product.objects.filter(name=name).exists():
             raise ValidationError('Заголовок с таким именем уже есть')
         return name
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('author', 'text', 'rating')
+
+    def __init__(self, *args, **kwargs):
+        product_pk = kwargs.pop('product_pk', None)
+        super().__init__(*args, **kwargs)
+        self.product_pk = product_pk
+
+    def save(self, commit=True):
+        review = super().save(commit=False)
+        review.product_id = self.product_pk
+        if commit:
+            review.save()
+        return review
 
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label="Найти")

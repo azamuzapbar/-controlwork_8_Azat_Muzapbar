@@ -16,9 +16,16 @@ class ProductCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         return reverse('product_detail', kwargs={'pk': self.object.pk})
 
 
-class ProductDetail(DetailView):
-    template_name = 'product.html'
+class ProductDetailView(DetailView):
     model = Product
+    template_name = 'product.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        product = self.object
+        reviews = product.reviews.all()
+        context['reviews'] = reviews
+        return context
 
 
 class ProductUpdateView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
