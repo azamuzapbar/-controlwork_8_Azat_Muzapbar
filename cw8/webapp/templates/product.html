@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Guest book {%endblock%}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<style>
+.container {
+  padding: 0;
+  margin: 30px;
+}
+
+.card {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+}
+
+.card-title svg {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <img class="card-img-top" src="{{ product.picture.url }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }} ({{ product.category }})</h5>
+                <p class="card-text">{{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

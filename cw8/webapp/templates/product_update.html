@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Article update
+{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+     <form action="{% url 'product_update' product.pk %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form">
+            {% include 'partial/product_form_2.html' with button_text='Изменить' %}
+        </div>
+
+    </form>
+{% endblock %}
+
