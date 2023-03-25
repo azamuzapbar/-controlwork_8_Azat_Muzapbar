@@ -59,7 +59,7 @@
             <p>{{ review.text }}</p>
             <p>Rating: {{ review.rating }}</p>
             <a href="{% url 'review_update' review.pk %}">Edit</a>
-            <a href="{% url 'review_delete' review.pk %}">Delete</a>
+            <a href="{% url 'review_delete' review.pk %}">Удалить</a>
         </li>
         {% endfor %}
     </ul>

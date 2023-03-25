@@ -51,12 +51,17 @@ class ReviewUpdateView(LoginRequiredMixin, UpdateView):
 
 
 
-class ReviewDeleteView(DeleteView):
-    model = Review
-    success_url = reverse_lazy('product_detail')
-    pk_url_kwarg = 'pk'
 
-    def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        self.object.delete()
-        return HttpResponseRedirect(self.get_success_url())
+class DeleteReview(LoginRequiredMixin, DeleteView):
+    model = Review
+    template_name = 'review/review_confirm_delete.html'
+    success_url = reverse_lazy('product_detail')
+
+    def get_success_url(self):
+        return reverse_lazy('product_detail', kwargs={'pk': self.object.product.pk})
+
+    def dispatch(self, request, *args, **kwargs):
+        review = self.get_object()
+        if review.author != self.request.user:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)

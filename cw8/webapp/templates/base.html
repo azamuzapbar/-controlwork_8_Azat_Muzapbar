@@ -32,17 +32,17 @@
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Вход</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Регистрация</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Register</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'profile' request.user.pk %}">Страница пользователя</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'profile' request.user.pk %}">Personal page</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Выйти</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% endif %}
                 <p>Good afternoon, {{request.user}}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Удаление отзыва</h2>
+  <p>Вы действительно хотите удалить отзыв "{{ review.text }}"?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Удалить" class="btn btn-danger">
+    <a href="{% url 'product_detail' review.product.pk %}" class="btn btn-secondary">Отмена</a>
+  </form>
+{% endblock %}

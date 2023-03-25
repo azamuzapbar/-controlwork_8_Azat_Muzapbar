@@ -13,15 +13,14 @@
 <br>
     <h1>Личная страница пользователя {{ user_obj.username }}</h1>
     <p>Имя пользователя: {{ user_obj.username }}</p>
-    <p>Имя: {{ user_obj.first_name }}</p>
     <p>Почта: {{ user_obj.email }}</p>
 
   <div class="row">
     <div class="col-2 text-center">
-        <a href="{% url 'change' user_obj.pk %}"><button type="submit" class="btn btn-secondary btn-block">Редактировать</button></a>
+        <a href="{% url 'change' user_obj.pk %}"><button type="submit" class="btn btn-primary btn-block">Редактировать</button></a>
     </div>
   <div class="col-2 text-center">
-    <a href="{% url 'password_change' user_obj.pk %}"><button type="submit" class="btn btn-secondary btn-block">Смена пароля</button></a>
+    <a href="{% url 'password_change' user_obj.pk %}"><button type="submit" class="btn btn-primary btn-block">Смена пароля</button></a>
  </div>
 
     <h2 class="text-center clear">Ваши отзывы:</h2>
