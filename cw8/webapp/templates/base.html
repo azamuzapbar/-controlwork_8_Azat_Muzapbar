@@ -26,10 +26,27 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'index' %}">List of Products</a>
                 </li>
+                {% if user.is_authenticated or request.user.is_superuser %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'product_add' %}">Create Tasks</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'product_add' %}">Create Product</a>
                 </li>
-                {% block menu %} {% endblock %}
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Регистрация</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'profile' request.user.pk %}">Страница пользователя</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Выйти</a>
+                </li>
+                {% endif %}
+                <p>Good afternoon, {{request.user}}
+                    {% block menu %} {% endblock %}
             </ul>
         </div>
     </div>
