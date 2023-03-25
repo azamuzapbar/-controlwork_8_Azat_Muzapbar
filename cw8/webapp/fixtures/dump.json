@@ -3,29 +3,9 @@
   "model": "webapp.product",
   "pk": 1,
   "fields": {
-    "name": "marcelo",
+    "name": "marceloww",
     "category": "FOOTBALL",
     "description": "footbal player",
-    "picture": "images/default.png"
-  }
-},
-{
-  "model": "webapp.product",
-  "pk": 2,
-  "fields": {
-    "name": "kepa",
-    "category": "FOOTBALL",
-    "description": "goalkeeper",
-    "picture": "images/default.png"
-  }
-},
-{
-  "model": "webapp.product",
-  "pk": 3,
-  "fields": {
-    "name": "lebron",
-    "category": "BASKETBALL",
-    "description": "James",
     "picture": "images/default.png"
   }
 },
@@ -70,11 +50,81 @@
   }
 },
 {
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "nwenewwen",
+    "category": "BASKETBALL",
+    "description": "newwe",
+    "picture": "images/default_EVqhsRu.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 9,
+  "fields": {
+    "name": "neweee",
+    "category": "BOX",
+    "description": "neee",
+    "picture": "images/default_yxFsUzJ.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 10,
+  "fields": {
+    "name": "bbhh",
+    "category": "FOOTBALL",
+    "description": "hhh",
+    "picture": "images/default.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 11,
+  "fields": {
+    "name": "reerer",
+    "category": "FOOTBALL",
+    "description": "rerreer",
+    "picture": "images/default_gytIkZp.png"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 13,
+  "fields": {
+    "author": 3,
+    "product": 5,
+    "text": "baaam",
+    "rating": 2
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 14,
+  "fields": {
+    "author": 3,
+    "product": 5,
+    "text": "baaam",
+    "rating": 2
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 15,
+  "fields": {
+    "author": 1,
+    "product": 5,
+    "text": "trotttt",
+    "rating": 4
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$usF1aPO6spgZqkhEWrasY7$VkmoRO89311mXZkh1TfA1wsJTOC1tEYJe8GJ0k9acb0=",
-    "last_login": "2023-03-25T06:56:46.739Z",
+    "last_login": "2023-03-25T12:45:58.642Z",
     "is_superuser": true,
     "username": "root",
     "first_name": "",
@@ -84,6 +134,46 @@
     "is_active": true,
     "date_joined": "2023-03-25T06:55:37.685Z",
     "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$B39gJFFu7D9p5Mtq8oc7tn$xr4aBkeoyAYvjg0XZJhQ4SdqQy9akHDIg/rxwSGu6uo=",
+    "last_login": "2023-03-25T12:13:10Z",
+    "is_superuser": false,
+    "username": "aza",
+    "first_name": "aza",
+    "last_name": "aza",
+    "email": "aza@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-25T12:13:02Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$LAMyFRzDLFq0fLrbwNk1Kn$OIcwrePRzdwcaEEPG1asx4HV5VoS1kvx4QQKJEjV07I=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "newuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-03-25T12:25:25Z",
+    "groups": [
+      2
+    ],
     "user_permissions": []
   }
 }
